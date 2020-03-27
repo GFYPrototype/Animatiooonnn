@@ -1,0 +1,89 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorChange1 {
+    0% {
+        border-color: yellow;
+    }
+    50% {
+        border-left: solid 10px orchid;
+    }
+    100% {
+        border-color: yellow;
+    }
+}
+
+@keyframes colorChange2 {
+    0% {
+        border-color: purple;
+    }
+    50% {
+        border-right: solid 10px blue;
+    }
+    100% {
+        border-color: purple;
+    }
+}
+
+body {
+    background-color: #282828;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: solid 2px yellow;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    animation: spin 2s linear none infinite, colorChange1 4s ease-in-out none infinite;
+}
+
+#spinner > div {
+    display: flex;
+    border-right: solid 2px purple;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    animation: spin 2s linear none infinite, colorChange2 4s ease-in-out none infinite;;
+}
+
+#spinner > div > div {
+    display: flex;
+    border-left: solid 2px red;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    animation: spin 2s linear none infinite;
+}
+
+#spinner > div > div > div {
+    display: flex;
+    border-right: solid 2px magenta;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    animation: spin 2s linear none infinite;
+}
